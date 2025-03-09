@@ -6,3 +6,11 @@
 
 * CSR 단점:  초기 요청 시간이 길다.
 => nextjs가 사전에 서버에서 렌더링한 후에 완성된 HTML을 브라우저에 보낸다. 그 후 JS Bundle을 보낸다.(Hydration).이 과정까지 완료되는 시점을 TTI(Time To interactive)이라는 지표로 표시한다.
+
+
+### Page Router
+pages 폴더 아래 있는 .js 파일의 이름이나 폴더의 이름을 기준으로 페이지를 라우팅 함   
+
+
+### App Router
+
