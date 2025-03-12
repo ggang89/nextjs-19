@@ -1,21 +1,12 @@
+import { getCurrentWeather } from "@/utils/getCurrentWeather";
+import Image from "next/image";
 import Link from "next/link";
 
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY 
 
-const getCurrentWeather = async () => {
-  const res = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=London&aqi=no`
-  )
 
-  if (!res.ok) {
-    if (!res.ok) throw new Error('날씨 정보를 가져올 수 없습니다.')
-  }
-  return res.json()
-};
-
-export default function Home() {
-   const res =  getCurrentWeather()
-  console.log(res)
+export default async function Home() {
+  const res = await getCurrentWeather('seoul');
+console.log('res',res)
   return (
     <>
       <h1 className="text-4xl font-bold">Home</h1>
@@ -23,6 +14,10 @@ export default function Home() {
       <ul>
         <li>
           <Link href="/seoul">🏙서울</Link>
+          <span>{res.current.condition.text}</span>&nbsp;
+          <span>🌡{res.current.temp_c }</span>
+          <Image src={res.current.condition.icon} alt={res.current.condition.text}
+          width={50} height={40} />
         </li>
         <li>
           {" "}
