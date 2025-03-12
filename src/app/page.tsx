@@ -13,7 +13,7 @@ export default async function Home() {
       <h2 className="text-2xl">날씨</h2>
       <ul>
         <li>
-          <Link href="/seoul">🏙서울</Link>
+          <Link href="/seoul?name=seoul">🏙서울</Link>
           <span>{res.current.condition.text}</span>&nbsp;
           <span>🌡{res.current.temp_c }</span>
           {/* <Image src={res.current.condition.icon} alt={res.current.condition.text}
