@@ -1,12 +1,12 @@
 import { getCurrentWeather } from "@/utils/getCurrentWeather";
-import Image from "next/image";
+//import Image from "next/image";
 import Link from "next/link";
 
 
 
 export default async function Home() {
   const res = await getCurrentWeather('seoul');
-console.log('res',res)
+//console.log('res',res)
   return (
     <>
       <h1 className="text-4xl font-bold">Home</h1>
@@ -16,8 +16,8 @@ console.log('res',res)
           <Link href="/seoul">🏙서울</Link>
           <span>{res.current.condition.text}</span>&nbsp;
           <span>🌡{res.current.temp_c }</span>
-          <Image src={res.current.condition.icon} alt={res.current.condition.text}
-          width={50} height={40} />
+          {/* <Image src={res.current.condition.icon} alt={res.current.condition.text}
+          width={50} height={40} /> */}
         </li>
         <li>
           {" "}
